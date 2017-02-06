@@ -1,0 +1,71 @@
+<html>
+    <head>
+        <title>Bootstrap Example</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+        <style>
+            ul {
+            list-style-type: none;
+            }
+            .panel-body {
+            background:#EFCFC;
+            }
+            .well{
+            background-color: #B6958E;
+            font-size: 20px;
+            
+            margin-top: 2%;
+
+
+            }
+            .sd{
+            text-font:100px; font-family:cursive;  
+            }
+
+          
+        </style>
+    </head>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+    <script src="model/extnl.js"></script>
+    <body background="img/bike10.jpg" align = "center">
+        <div ng-app="app1" ng-controller="cntrl">
+            <div class="container">
+                <div class="panel panel-default" style="margin-top:9%;">
+                    <div class="panel-body">
+                        <div class="jumbotron">
+                              <form name="firstform">
+
+                            <div class="sd">
+                                <h1>BIKEMANIA</h1><br>
+                            </div>
+                            <div class="well well-lg">
+                                <ul>
+                                    <li ng-repeat="x in bikes">{{x}}
+                                        <span ng-click="removeItem($index)" style="cursor:pointer;">x</span>
+                                    </li>
+                                </ul>
+                                
+
+
+
+
+
+                            </div>
+                            <input ng-model="addMe" name="addMe" placeholder="Put Any Bike Name"  style="width: 500px; height:70px; font-size:18px";><button ng-click="addItem()" style="background-color:#C0C0C0; width:80px; height:70px";>Add</button>
+                           
+                            <span>{{errortext}}</span>
+                          
+                            </form>
+                             <p style="float:right";><a href="view/mydetails.html">visit in homepage</a></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+      
+    </body>
+</html>
+

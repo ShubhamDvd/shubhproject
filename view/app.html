@@ -1,0 +1,51 @@
+<html>
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<style>
+ul {
+  list-style-type: none;
+
+
+
+
+}
+</style>
+</head>
+
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+<script src="extnl.js"></script>
+
+<body align = "center">
+
+	<div ng-app="app1" ng-controller="cntrl">
+
+   <div class="container">
+   <div class="jumbotron">
+   <h2>SELECT BIKE</h2>
+
+
+		<ul>
+              
+                <li ng-repeat="x in bikes track by $index">{{x}}
+               	<span ng-click="removeItem($index)" style="cursor:pointer;">x</span></li>
+    </ul>
+
+
+		          <input ng-model="addMe" placeholder="addMe"><button ng-click="addItem()" style="color:red";>Add</button>
+		                        
+
+
+
+
+   </div>
+  </div>
+	</div>
+</body>
+</html>
