@@ -1,0 +1,160 @@
+<html lang="en" ng-app>
+
+<head>
+  <title>Registration Form</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  
+
+<title>PracticeForm</title>
+<script src="form1.js"></script>
+
+<style>
+
+input.ng-invalid.ng-dirty{border:1px solid RED;}
+
+  
+		@media only screen and (max-width: 768px) 
+		{
+			/* For mobile phones: */
+			[class*="col-"]
+			{
+				width: 100%;
+			}
+		}
+		
+		@media only screen and (min-width: 900px)
+		{
+		
+		[class*="col-m"]
+		{
+		width: 100%;
+		}
+		
+		}
+		
+		@media only screen and (max-width: 768px)
+		{
+		
+		[class*="col-"]
+		{
+		width: 100%;
+		}
+		
+		}
+		
+		body{
+	      margin:0;
+          padding:0;
+          overflow-x:hidden;
+          bottom:0;
+          width:100%;
+		  height:100%;
+          min-height:600px;		  
+		
+		}
+		
+		
+		
+		
+
+
+
+
+</style>
+</head>
+
+<body background ="d.jpeg" align = "center">
+
+<div class="container">
+<div class="jumbotron" style="position: relative;top: 39px;left: 33px; right: 50px";>
+
+<form name="myform">
+<div class="panel panel-default" style = " box-shadow: 0 0 95px black";>
+<div class="panel-body">
+
+<h2><u>Student Registration Form</u></h2><br><br>
+<p style="float:left; font-style:oblique;">ALL FIELDS ARE MANDITORY</p>
+<div Style="float:left";></div><br><br>
+<div class="row">
+			
+
+			
+			
+<div class="panel-body">
+<div class="row">
+			
+<div class ="col-xs-4" style="font-size:20px;"><label>firstname:</label></div>
+<div class ="col-xs-4"><input type="text" name="fname" ng-pattern="/^[a-z ,.'-]+$/i" ng-minlength=5 ng-maxlength=7 ng-model="user.fname" placeholder="firstname" required /></div>
+
+<span ng-show="myform.fname.$invalid && !myform.fname.$error.pattern && !myform.fname.$error.minlength && !myform.fname.$error.maxlength">enter correct firstname</span><br>
+<span ng-show="myform.fname.$dirty && !myform.fname.$error.pattern && myform.fname.$error.minlength">UsserName contain must be 5 character</span>
+<span ng-show="myform.fname.$dirty && !myform.fname.$error.pattern && myform.fname.$error.maxlength">UsserName contain must be 7 character</span>
+<span ng-show="myform.fname.$error.pattern">name should be character</span><br>
+</div><br>
+</div>
+
+<div class="panel-body">
+<div class="row">
+<div class ="col-xs-4" style="font-size:20px;" disabled><label>lastname:</label></div>
+<div class ="col-xs-4"><input type="text" name="lname" ng-pattern="/^[a-z ,.'-]+$/i" ng-minlength=5 ng-maxlength=7 ng-model="user.lname" placeholder="lastname"required /></div>
+
+<span ng-show="myform.lname.$invalid && !myform.lname.$error.pattern && !myform.lname.$error.minlength && !myform.lname.$error.maxlength">enter correct lastname</span><br>
+<span ng-show="myform.lname.$dirty && !myform.lname.$error.pattern && myform.lname.$error.minlength">UsserName contain must be 5 character</span>
+<span ng-show="myform.lname.$dirty && !myform.lname.$error.pattern && myform.lname.$error.maxlength">UsserName contain must be 7 character</span>
+<span ng-show="myform.lname.$error.pattern">name should be character</span><br>
+</div><br>
+</div>
+
+<div class="panel-body">
+<div class="row">
+<div class ="col-xs-4" style="font-size:20px;"><label>Mnumber:</label></div>
+<div class ="col-xs-4"><input type="text" name="mobile" ng-pattern="/^(\+\91{1,2}[- ])\d{10}$/" ng-maxlength=12 ng-model="user.mobile" placeholder="number" required /></div>
+<span ng-show="myform.mobile.$error.required">Enter The correct number</span><br>
+<span ng-show="myform.mobile.$error.pattern">mobile number is not valid.</span><br>
+</div><br>
+</div>
+
+
+<div class="panel-body">
+<div class="row">
+<div class ="col-xs-4" style="font-size:20px;"><label>Email:</label></div>
+<div class ="col-xs-4"><input type="email" name="email" ng-model="user.email" placeholder="email" required /></div>
+<span ng-show="myform.email.$error.required">Enter a email</span><br>
+<span ng-show="myform.email.$error.email">Enter a correct email</span><br>
+</div><br>
+</div>
+<div class="panel-body">
+<div class="row">
+<div class ="col-xs-4" style="font-size:20px;"><label>Gender:</label></div>
+<div class ="col-xs-4"><select name="gender" ng-model="user.gender" required />
+<option value="">--select--</option>
+<option value="female">Male</option>
+<option value="female">Female</option>
+</select>
+
+</div>
+<span ng-show="myform.gender.$invalid">Please select any gender</span><br><br>
+</div>
+</div>
+
+<div class="panel-body">
+<div class="row">
+<div class ="col-xs-4" style="font-size:20px;"><label>Adress:</label></div>
+<div class ="col-xs-4"><textarea rows="3" cols="18" name="from" ng-model="user.from" placeholder="enter the address" required /></textarea></div>
+<span ng-show="myform.from.$error.required">Please enter the correct address</span><br>
+</div><br>
+</div>
+
+<button type="button">Submit</button>
+
+</form>
+</div>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+</body>
+</html>
+
+
